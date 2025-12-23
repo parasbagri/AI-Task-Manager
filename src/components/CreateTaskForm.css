@@ -124,30 +124,50 @@
 
 .enhance-btn {
     margin-top: var(--space-2);
-    background: var(--gradient-secondary);
-    border: none;
-    padding: var(--space-2) var(--space-4);
-    border-radius: var(--radius-md);
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border: 2px solid transparent;
+    padding: var(--space-3) var(--space-5);
+    border-radius: var(--radius-lg);
     color: white;
-    font-size: 0.9rem;
-    font-weight: 600;
+    font-size: 0.95rem;
+    font-weight: 700;
     cursor: pointer;
-    transition: var(--transition);
-    display: flex;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: inline-flex;
     align-items: center;
     gap: var(--space-2);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+}
+
+.enhance-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
 }
 
 .enhance-btn:hover {
-    transform: translateY(-1px);
-    box-shadow: var(--shadow-lg);
-    filter: brightness(1.1);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.6);
+    border-color: rgba(255, 255, 255, 0.3);
+    filter: brightness(1.15);
+}
+
+.enhance-btn:hover::before {
+    left: 100%;
 }
 
 .enhance-btn:disabled {
-    opacity: 0.7;
+    opacity: 0.6;
     cursor: not-allowed;
     transform: none;
+    box-shadow: 0 2px 8px rgba(102, 126, 234, 0.2);
 }
 
 .submit-btn {
