@@ -19,7 +19,7 @@ A modern, full-stack web application for managing tasks and tracking time spent 
 ## 🛠️ Tech Stack
 
 ### Frontend
-- **Next.js 13+** - React framework with App Router
+- **Next.js 16+** - React framework with App Router
 - **TypeScript** - Type-safe JavaScript
 - **Tailwind CSS** - Utility-first CSS framework
 - **React Context API** - State management for auth and timer
