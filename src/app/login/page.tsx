@@ -82,6 +82,25 @@ export default function LoginPage() {
         <p className="auth-link">
           Don't have an account? <a href="/register">Sign Up</a>
         </p>
+        <div style={{
+          marginTop: '24px',
+          padding: '16px',
+          backgroundColor: 'rgba(100, 120, 150, 0.2)',
+          borderRadius: '8px',
+          borderLeft: '4px solid #6366f1'
+        }}>
+          <p style={{ margin: '0 0 12px 0', fontSize: '12px', fontWeight: '600', color: '#a0aec0' }}>
+            💡 Test Credentials
+          </p>
+          <div style={{ fontSize: '13px', color: '#cbd5e0', lineHeight: '1.6' }}>
+            <p style={{ margin: '0 0 6px 0' }}>
+              <strong>Email:</strong> pa3@gmail.com
+            </p>
+            <p style={{ margin: '0' }}>
+              <strong>Password:</strong> pass@123
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   );
