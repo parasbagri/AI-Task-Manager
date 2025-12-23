@@ -1,0 +1,216 @@
+.summary-page {
+    padding: var(--space-8);
+    min-height: 100vh;
+    color: #fff;
+}
+
+.summary-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    /* Removed glassmorphism container to match image 2 which looks cleaner/flatter or different structure */
+    /* If the background is dark in the app, we might not need a container background, or a subtle one */
+}
+
+.page-title {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: var(--space-8);
+    color: white;
+}
+
+/* Layout */
+.summary-layout {
+    display: grid;
+    grid-template-columns: 1.2fr 1.5fr; /* Left column slightly smaller or adjusted based on content */
+    gap: var(--space-6);
+    align-items: start;
+}
+
+@media (max-width: 1024px) {
+    .summary-layout {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Left Column Components */
+.summary-left {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+}
+
+.date-picker-card {
+    background: #4b4b4b; /* Dark grey card background */
+    border-radius: var(--radius-xl);
+    padding: var(--space-4) var(--space-6);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: var(--space-2);
+}
+
+.date-picker-card h2 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin: 0;
+    color: white;
+}
+
+.beautiful-date-picker {
+    background: #f3f4f6;
+    border: none;
+    padding: var(--space-2) var(--space-4);
+    border-radius: var(--radius-md);
+    font-family: inherit;
+    font-weight: 500;
+    color: #1f2937;
+    cursor: pointer;
+    outline: none;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-4);
+}
+
+.stat-card {
+    background: #6b6b6b; /* Lighter grey for stats */
+    border-radius: var(--radius-xl);
+    padding: var(--space-6);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    min-height: 120px;
+}
+
+.stat-card h3 {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: rgba(255, 255, 255, 0.8);
+    margin: 0 0 var(--space-2) 0;
+}
+
+.stat-value {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: white;
+    margin: 0;
+}
+
+/* Right Column Components */
+.summary-right {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+}
+
+.info-card {
+    background: #4b4b4b;
+    border-radius: var(--radius-xl);
+    padding: var(--space-6);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.info-card h2 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0 0 var(--space-4) 0;
+    color: white;
+}
+
+/* Active Task */
+.active-task-container {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px dashed rgba(255, 255, 255, 0.2);
+    border-radius: var(--radius-lg);
+    padding: var(--space-8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100px;
+}
+
+.no-active-tasks {
+    color: rgba(255, 255, 255, 0.5);
+    font-style: italic;
+    font-size: 0.95rem;
+}
+
+.active-timer-display {
+    width: 100%;
+}
+
+.active-timer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.active-task-title {
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.running-time {
+    color: #818cf8; /* Indigo/Purple accent */
+    font-weight: 700;
+    font-size: 1.2rem;
+    font-variant-numeric: tabular-nums;
+}
+
+/* Logs List */
+.logs-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+}
+
+.log-item {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-lg);
+    padding: var(--space-4);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.log-details {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+}
+
+.log-title {
+    font-weight: 600;
+    font-size: 1rem;
+    color: white;
+}
+
+.log-time-range {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.6);
+    font-family: monospace;
+}
+
+.log-duration {
+    color: #818cf8; /* Indigo/Purple accent */
+    font-weight: 600;
+    font-size: 1rem;
+    font-variant-numeric: tabular-nums;
+}
+
+.no-logs {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.4);
+    padding: var(--space-4);
+    font-style: italic;
+}

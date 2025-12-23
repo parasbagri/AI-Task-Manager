@@ -1,0 +1,221 @@
+.task-item {
+    background: var(--bg-card);
+    border-radius: var(--radius-xl);
+    padding: var(--space-6);
+    box-shadow: var(--shadow-md);
+    transition: var(--transition);
+    position: relative;
+    margin-bottom: var(--space-4);
+    border: 1px solid var(--border-muted);
+}
+
+.task-item:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--primary);
+}
+
+.task-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: var(--space-6);
+}
+
+.task-info {
+    flex: 1;
+}
+
+.task-info h3 {
+    margin: 0 0 var(--space-2) 0;
+    color: var(--text-primary);
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.task-description {
+    margin: 0;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.task-status {
+    padding: var(--space-1) var(--space-3);
+    border-radius: var(--radius-full);
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    white-space: nowrap;
+    border: 1px solid;
+    cursor: default;
+    background: none;
+    font-family: inherit;
+    margin-left: var(--space-4);
+}
+
+.task-footer {
+    display: flex;
+    flex-direction: column;
+    margin-top: var(--space-6);
+    padding-top: var(--space-4);
+    border-top: 1px solid var(--border-primary);
+    gap: var(--space-4);
+}
+
+.task-time-info {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+    width: 100%;
+}
+
+.timer-active {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    color: var(--success);
+    font-weight: 600;
+    padding: var(--space-2) var(--space-4);
+    background: rgba(16, 185, 129, 0.1);
+    border-radius: var(--radius-full);
+    border: 1px solid rgba(16, 185, 129, 0.2);
+    animation: pulse 2s ease-in-out infinite;
+    width: fit-content;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.4); }
+    50% { transform: scale(1.05); box-shadow: 0 0 0 10px rgba(16, 185, 129, 0); }
+}
+
+.total-time {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.time-label {
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    margin-bottom: 2px;
+}
+
+.time-value {
+    color: var(--text-primary);
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.task-actions {
+    display: flex;
+    gap: var(--space-3);
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.action-btn {
+    padding: var(--space-2) var(--space-6);
+    border-radius: var(--radius-md);
+    border: none;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 0.85rem;
+    transition: var(--transition);
+    text-transform: uppercase;
+    color: white;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 80px;
+}
+
+.action-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+    background-color: var(--bg-secondary) !important; /* Force override */
+    color: var(--text-muted);
+    border: 1px solid var(--border-muted);
+}
+
+.btn-start {
+    background-color: #10b981; /* Green */
+}
+.btn-start:hover {
+    background-color: #059669;
+}
+
+.btn-stop {
+    background-color: #ef4444; /* Red */
+}
+.btn-stop:hover {
+    background-color: #dc2626;
+}
+
+.btn-complete {
+    background-color: #8b5cf6; /* Purple */
+}
+.btn-complete:hover {
+    background-color: #7c3aed;
+}
+
+.btn-edit {
+    background-color: #1f2937; /* Dark Grey */
+    border: 1px solid var(--border-primary);
+}
+.btn-edit:hover {
+    background-color: #374151;
+}
+
+.btn-delete {
+    background-color: #ef4444; /* Red */
+}
+.btn-delete:hover {
+    background-color: #dc2626;
+}
+
+.edit-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+}
+
+.edit-input,
+.edit-textarea {
+    width: 100%;
+    padding: var(--space-3);
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid var(--border-muted);
+    border-radius: var(--radius-md);
+    color: var(--text-primary);
+    font-size: 1rem;
+    font-family: inherit;
+}
+
+.edit-textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+.edit-input:focus,
+.edit-textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+    background: rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 640px) {
+    .task-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .action-btn {
+        width: 100%;
+    }
+}
