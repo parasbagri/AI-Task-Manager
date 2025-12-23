@@ -62,7 +62,7 @@ export async function POST(request: Request) {
     return NextResponse.json({ timeLog }, { status: 201 });
   } catch (error) {
     if (error instanceof z.ZodError) {
-      return NextResponse.json({ error: 'Invalid input', details: error.errors }, { status: 400 });
+      return NextResponse.json({ error: 'Invalid input', details: error.issues }, { status: 400 });
     }
     console.error('Time log creation error:', error);
     return NextResponse.json({ error: 'Failed to create time log' }, { status: 500 });
